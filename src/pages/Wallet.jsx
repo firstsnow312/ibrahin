@@ -43,6 +43,7 @@ const Injected = new InjectedConnector({
 // });
 
 const Wallet = () => {
+    
     const { activate, deactivate, active, chainId, account } = useWeb3React();
     // const [network, setNetwork] = useState(undefined);
     // const [message, setMessage] = useState("");
@@ -150,6 +151,7 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
+                        <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet">metamask mobile app connection</a>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
