@@ -14,7 +14,7 @@ import img1 from '../assets/images/icon/connect-1.png'
 import img9 from '../assets/images/icon/connect-9.png'
 
 import { useWeb3React } from '@web3-react/core'
-import { WalletLinkConnector } from "@web3-react/walletlink-connector";
+// import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { InjectedConnector } from "@web3-react/injected-connector";
 
