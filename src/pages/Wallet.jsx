@@ -31,7 +31,11 @@ const WalletConnect = new WalletConnectConnector({
 });
    
 const Injected = new InjectedConnector({
-    supportedChainIds: [1, 3, 4, 5, 42]
+    supportedChainIds: [1, 3, 4, 5, 42],
+    id: "injected",
+    name: "MetaMask",
+    type: "injected",
+    check: "isMetaMask",
 });
 
 // const Trust = new TrustWalletConnector({
