@@ -19,7 +19,8 @@ import img1 from '../assets/images/icon/connect-1.png'
 // import img7 from '../assets/images/icon/connect-7.png'
 // import img8 from '../assets/images/icon/connect-8.png'
 import img9 from '../assets/images/icon/connect-9.png'
-import {isMobile} from 'react-device-detect';
+// import {isMobile} from 'react-device-detect';
+import * as rdd from 'react-device-detect'
 
 // const CoinbaseWallet = new WalletLinkConnector({
 //     url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
@@ -67,8 +68,13 @@ const Wallet = () => {
     };
 
     const metamaskConnect = () => {
-        var obj = document.getElementById("link").click();
-        activate(Injected, obj);
+        if (rdd.isBrowser) {
+            var obj = document.getElementById("link").click();
+            activate(Injected, obj);
+        } else {
+            activate(Injected, obj);
+        }
+        
     };
 
     // const [data] = useState(
@@ -174,7 +180,7 @@ const Wallet = () => {
                                         </div>
                                     ))
                                 } */}
-                                <div className="sc-box-icon" onClick={() => { isMobile? metamaskConnect() : activate(Injected) }}>
+                                <div className="sc-box-icon" onClick={() => { rdd.isMobile? metamaskConnect() : activate(Injected) }}>
                                     <div className="img">
                                         <img src={img1} alt="Axies" />
                                     </div>
