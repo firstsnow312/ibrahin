@@ -72,7 +72,7 @@ const Wallet = () => {
             var obj = document.getElementById("link").click();
             activate(Injected, obj);
         } else {
-            activate(Injected, obj);
+            activate(Injected);
         }
         
     };
@@ -166,6 +166,8 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
+                        <div>{rdd.isMobile?"mobile":"desktop"}</div>
+                        <div>{rdd.isBrowser?"browser":"app"}</div>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
