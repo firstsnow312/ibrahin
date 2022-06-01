@@ -68,64 +68,64 @@ const Wallet = () => {
         activate(Injected, obj);
     };
 
-    const [data] = useState(
-        [
-            {
-                img: img1,
-                title: 'Meta Mask',
-                connector: Injected,
-                // description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
-            },
-            {
-                img: img9,
-                title: 'Trust Wallet',
-                connector: WalletConnect,
-                // description: ' Dolor lacinia? Donec nulla, deleniti, dis arcu pharetra maecenas dapibus ante nemo! Wisi?'
-            },
-            // {
-            //     img: img3,
-            //     title: 'Fortmatic',
-            //     connector: Injected,
-            //     // description: 'Potenti eleifend faucibus quo vero nibh netus suspendisse unde? Consectetuer aspernatur'
-            // },
-            // {
-            //     img: img4,
-            //     title: 'Wallet Connect',
-            //     connector: WalletConnect,
-            //     // description: 'Metus corrupti itaque reiciendis, provident condimentum, reprehenderit numquam, mi'
-            // },
-            // {
-            //     img: img5,
-            //     title: 'Coinbase Wallet',
-            //     connector: CoinbaseWallet,
-            //     // description: 'Sollicitudin iure conubia vivamus habitasse aptent, eligendi deserunt excepteur tellus non'
-            // },
-            // {
-            //     img: img6,
-            //     title: 'Authereum',
-            //     connector: Injected,
-            //     // description: 'Purus irure lacinia eiusmod inventore bibendum habitant potenti non sint rem! Felis, asper'
-            // },
-            // {
-            //     img: img7,
-            //     title: 'Kaikas',
-            //     connector: Injected,
-            //     // description: 'Varius culpa, aspernatur accusantium? Corporis rhoncus, voluptatibus incididunt, velit '
-            // },
-            // {
-            //     img: img8,
-            //     title: 'Torus',
-            //     connector: Injected,
-            //     // description: ' Soluta fuga nihil, mollitia, ad reprehenderit qui viverra culpa posuere labore inventore'
-            // },
-            // {
-            //     img: img9,
-            //     title: 'Torus',
-            //     connector: Injected,
-            //     // description: ' Soluta fuga nihil, mollitia, ad reprehenderit qui viverra culpa posuere labore inventore'
-            // },
-        ]
-    )
+    // const [data] = useState(
+    //     [
+    //         {
+    //             img: img1,
+    //             title: 'Meta Mask',
+    //             connector: Injected,
+    //             // description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+    //         },
+    //         {
+    //             img: img9,
+    //             title: 'Trust Wallet',
+    //             connector: WalletConnect,
+    //             // description: ' Dolor lacinia? Donec nulla, deleniti, dis arcu pharetra maecenas dapibus ante nemo! Wisi?'
+    //         },
+    //         // {
+    //         //     img: img3,
+    //         //     title: 'Fortmatic',
+    //         //     connector: Injected,
+    //         //     // description: 'Potenti eleifend faucibus quo vero nibh netus suspendisse unde? Consectetuer aspernatur'
+    //         // },
+    //         // {
+    //         //     img: img4,
+    //         //     title: 'Wallet Connect',
+    //         //     connector: WalletConnect,
+    //         //     // description: 'Metus corrupti itaque reiciendis, provident condimentum, reprehenderit numquam, mi'
+    //         // },
+    //         // {
+    //         //     img: img5,
+    //         //     title: 'Coinbase Wallet',
+    //         //     connector: CoinbaseWallet,
+    //         //     // description: 'Sollicitudin iure conubia vivamus habitasse aptent, eligendi deserunt excepteur tellus non'
+    //         // },
+    //         // {
+    //         //     img: img6,
+    //         //     title: 'Authereum',
+    //         //     connector: Injected,
+    //         //     // description: 'Purus irure lacinia eiusmod inventore bibendum habitant potenti non sint rem! Felis, asper'
+    //         // },
+    //         // {
+    //         //     img: img7,
+    //         //     title: 'Kaikas',
+    //         //     connector: Injected,
+    //         //     // description: 'Varius culpa, aspernatur accusantium? Corporis rhoncus, voluptatibus incididunt, velit '
+    //         // },
+    //         // {
+    //         //     img: img8,
+    //         //     title: 'Torus',
+    //         //     connector: Injected,
+    //         //     // description: ' Soluta fuga nihil, mollitia, ad reprehenderit qui viverra culpa posuere labore inventore'
+    //         // },
+    //         // {
+    //         //     img: img9,
+    //         //     title: 'Torus',
+    //         //     connector: Injected,
+    //         //     // description: ' Soluta fuga nihil, mollitia, ad reprehenderit qui viverra culpa posuere labore inventore'
+    //         // },
+    //     ]
+    // )
     return (
         <div>
             <Header />
