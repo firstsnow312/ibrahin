@@ -67,8 +67,8 @@ const Wallet = () => {
     };
 
     const metamaskConnect = () => {
-        //var obj = document.getElementById("link").click();
-        //activate(Injected, obj);
+        var obj = document.getElementById("link").click();
+        activate(Injected);
     };
 
     // const [data] = useState(
@@ -151,6 +151,7 @@ const Wallet = () => {
                     </div>
                 </div>
             </section>
+            <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet/type=mobile" id="link" style={{display:'none'}}>Metamask</a>
             <div className="tf-connect-wallet tf-section">
                 <div className="themesflat-container">
                     <div className="row">
@@ -159,7 +160,6 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
-                        <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet/type=mobile" id="link" >metamask mobile app connection</a>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
@@ -193,7 +193,7 @@ const Wallet = () => {
                             <div className="sc-box-icon style-2">    
                                 <div className="mg-bt-12"><h4 className="">Account: {account}</h4></div>                            
                                 <div className="mg-bt-12"><h4 className="">Network ID: {chainId}</h4></div>
-                                <div className="mg-bt-12"><button type="button" className="primary" onClick={disconnect}>Disconnect</button></div>
+                                <div className="mg-bt-12"><button type="button" className="submit" onClick={disconnect}>Disconnect</button></div>
                             </div>
                             }
                         </div>
