@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
+
+import { useWeb3React } from '@web3-react/core'
+// import { WalletLinkConnector } from "@web3-react/walletlink-connector";
+import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
+import { InjectedConnector } from "@web3-react/injected-connector";
+
 import img1 from '../assets/images/icon/connect-1.png'
 // import img2 from '../assets/images/icon/connect-2.png'
 // import img3 from '../assets/images/icon/connect-3.png'
@@ -13,11 +19,7 @@ import img1 from '../assets/images/icon/connect-1.png'
 // import img7 from '../assets/images/icon/connect-7.png'
 // import img8 from '../assets/images/icon/connect-8.png'
 import img9 from '../assets/images/icon/connect-9.png'
-
-import { useWeb3React } from '@web3-react/core'
-// import { WalletLinkConnector } from "@web3-react/walletlink-connector";
-import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
-import { InjectedConnector } from "@web3-react/injected-connector";
+import {isMobile} from 'react-device-detect';
 
 // const CoinbaseWallet = new WalletLinkConnector({
 //     url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
@@ -65,8 +67,8 @@ const Wallet = () => {
     };
 
     const metamaskConnect = () => {
-        var obj = document.getElementById("link").click();
-        activate(Injected, obj);
+        //var obj = document.getElementById("link").click();
+        //activate(Injected, obj);
     };
 
     // const [data] = useState(
@@ -157,7 +159,7 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
-                        <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet" id="link" >metamask mobile app connection</a>
+                        <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet/type=mobile" id="link" >metamask mobile app connection</a>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
@@ -172,18 +174,18 @@ const Wallet = () => {
                                         </div>
                                     ))
                                 } */}
-                                <div className="sc-box-icon" onClick={() => { metamaskConnect() }}>
+                                <div className="sc-box-icon" onClick={() => { isMobile? metamaskConnect() : activate(Injected) }}>
                                     <div className="img">
                                         <img src={img1} alt="Axies" />
                                     </div>
-                                    <h4 className="heading"><Link to="/wallet">Metamask</Link> </h4>
+                                    <h4 className="heading"><Link to="/wallet/type=desktop">Metamask</Link> </h4>
                                     <p className="content"></p>
                                 </div>
                                 <div className="sc-box-icon" onClick={() => { activate(WalletConnect) }}>
                                     <div className="img">
                                         <img src={img9} alt="Axies" />
                                     </div>
-                                    <h4 className="heading"><Link to="/wallet">Trust Wallet</Link> </h4>
+                                    <h4 className="heading"><Link to="/wallet/type=desktop">Trust Wallet</Link> </h4>
                                     <p className="content"></p>
                                 </div>
                             </div>
