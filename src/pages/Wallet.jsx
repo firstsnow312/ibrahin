@@ -68,7 +68,7 @@ const Wallet = () => {
 
     const metamaskConnect = () => {
         var obj = document.getElementById("link").click();
-        activate(Injected);
+        activate(Injected, obj);
     };
 
     // const [data] = useState(
