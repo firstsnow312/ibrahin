@@ -63,6 +63,11 @@ const Wallet = () => {
         deactivate();
     };
 
+    const metamaskConnect = () => {
+        var obj = document.getElementById("link").click();
+        activate(Injected, obj);
+    };
+
     const [data] = useState(
         [
             {
@@ -151,11 +156,11 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
-                        <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet">metamask mobile app connection</a>
+                        <a href="https://metamask.app.link/dapp/93.188.162.83:3000/wallet" id="link" >metamask mobile app connection</a>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
-                                {
+                                {/* {
                                     data.map((item, index) => (
                                         <div key={index} className="sc-box-icon" onClick={() => { activate(item.connector) }}>
                                             <div className="img">
@@ -165,7 +170,21 @@ const Wallet = () => {
                                             <p className="content">{item.description}</p>
                                         </div>
                                     ))
-                                }
+                                } */}
+                                <div className="sc-box-icon" onClick={() => { metamaskConnect() }}>
+                                    <div className="img">
+                                        <img src={img1} alt="Axies" />
+                                    </div>
+                                    <h4 className="heading"><Link to="/wallet">Metamask</Link> </h4>
+                                    <p className="content"></p>
+                                </div>
+                                <div className="sc-box-icon" onClick={() => { activate(WalletConnect) }}>
+                                    <div className="img">
+                                        <img src={img9} alt="Axies" />
+                                    </div>
+                                    <h4 className="heading"><Link to="/wallet">Trust Wallet</Link> </h4>
+                                    <p className="content"></p>
+                                </div>
                             </div>
                             :
                             <div className="sc-box-icon style-2">    
