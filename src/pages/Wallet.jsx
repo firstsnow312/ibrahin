@@ -156,7 +156,7 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
-                        <a href="https://metamask.app.link/dapp/93.188.162.83:3000/wallet" id="link" >metamask mobile app connection</a>
+                        <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet" id="link" >metamask mobile app connection</a>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
