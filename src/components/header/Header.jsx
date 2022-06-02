@@ -16,7 +16,7 @@ const Header = () => {
     const { pathname } = useLocation();
     const { type } = useParams();
     var link = "/wallet/desktop";
-    if (isMobile&&type === "deeplink" || window.localStorage.getItem("type"==="deeplink") ){
+    if ( (isMobile&&type) === "deeplink" || window.localStorage.getItem("type")==="deeplink" ){
         link =  "/wallet/deeplink";               
     } 
 
