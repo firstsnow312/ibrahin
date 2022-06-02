@@ -68,7 +68,7 @@ const Wallet = () => {
     const disconnect = () => {
         refreshState();
         deactivate();
-        window.localStorage.setItem("type", "");
+        //window.localStorage.setItem("type", "");
     };
 
     const metamaskConnect = () => {
