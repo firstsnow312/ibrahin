@@ -47,6 +47,7 @@ const Wallet = () => {
     const { type } = useParams();
 
     if (isMobile&&type === "deeplink") {
+        window.localStorage.setItem("type",  "deeplink");
         activate(Injected);                
     } 
 
