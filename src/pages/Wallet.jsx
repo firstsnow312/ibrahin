@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
-
 import { useWeb3React } from '@web3-react/core'
 // import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { InjectedConnector } from "@web3-react/injected-connector";
+import { useParams } from "react-router-dom";
 
 import img1 from '../assets/images/icon/connect-1.png'
 // import img2 from '../assets/images/icon/connect-2.png'
@@ -42,12 +42,9 @@ const Injected = new InjectedConnector({
     check: "isMetaMask",
 });
 
-// const Trust = new TrustWalletConnector({
-//     supportedChainIds: [1, 3, 4, 5, 42]
-// });
-
 const Wallet = () => {
-    
+    const { type } = useParams();
+
     const { activate, deactivate, active, chainId, account } = useWeb3React();
     // const [network, setNetwork] = useState(undefined);
     // const [message, setMessage] = useState("");
@@ -68,13 +65,16 @@ const Wallet = () => {
     };
 
     const metamaskConnect = () => {
-        if (rdd.isBrowser) {
-            var obj = document.getElementById("link").click();
-            activate(Injected, obj);
+        if (rdd.isMobile){
+            if (type === "deeplink") {
+                activate(Injected);                
+            } else {
+                var obj = document.getElementById("link").click();
+                activate(Injected, obj);
+            }
         } else {
-            activate(Injected);
-        }
-        
+            activate(Injected);        
+        }     
     };
 
     // const [data] = useState(
@@ -157,7 +157,7 @@ const Wallet = () => {
                     </div>
                 </div>
             </section>
-            <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet/type=mobile" id="link" style={{display:'none'}}>Metamask</a>
+            <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet/deeplink" id="link" style={{display:'none'}}>Metamask</a>
             <div className="tf-connect-wallet tf-section">
                 <div className="themesflat-container">
                     <div className="row">
@@ -186,14 +186,14 @@ const Wallet = () => {
                                     <div className="img">
                                         <img src={img1} alt="Axies" />
                                     </div>
-                                    <h4 className="heading"><Link to="/wallet/type=desktop">Metamask</Link> </h4>
+                                    <h4 className="heading"><Link to="/wallet/desktop">Metamask</Link> </h4>
                                     <p className="content"></p>
                                 </div>
                                 <div className="sc-box-icon" onClick={() => { activate(WalletConnect) }}>
                                     <div className="img">
                                         <img src={img9} alt="Axies" />
                                     </div>
-                                    <h4 className="heading"><Link to="/wallet/type=desktop">Trust Wallet</Link> </h4>
+                                    <h4 className="heading"><Link to="/wallet/desktop">Trust Wallet</Link> </h4>
                                     <p className="content"></p>
                                 </div>
                             </div>
