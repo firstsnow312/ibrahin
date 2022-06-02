@@ -3394,5 +3394,6 @@ header{
     cursor:pointer;
 }
 .logo-footer img{
-    max-width:50px;
+    width:50px;
+    height:45px
 }
