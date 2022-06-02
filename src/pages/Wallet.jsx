@@ -19,8 +19,8 @@ import img1 from '../assets/images/icon/connect-1.png'
 // import img7 from '../assets/images/icon/connect-7.png'
 // import img8 from '../assets/images/icon/connect-8.png'
 import img9 from '../assets/images/icon/connect-9.png'
-// import {isMobile} from 'react-device-detect';
-import * as rdd from 'react-device-detect'
+import {isMobile} from 'react-device-detect';
+// import * as rdd from 'react-device-detect'
 
 // const CoinbaseWallet = new WalletLinkConnector({
 //     url: `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`,
@@ -45,8 +45,8 @@ const Injected = new InjectedConnector({
 const Wallet = () => {
     const { activate, deactivate, active, chainId, account } = useWeb3React();
     const { type } = useParams();
-    
-    if (rdd.isMobile&&type === "deeplink") {
+
+    if (isMobile&&type === "deeplink") {
         activate(Injected);                
     } 
 
@@ -69,7 +69,7 @@ const Wallet = () => {
     };
 
     const metamaskConnect = () => {
-        if (rdd.isMobile){
+        if (isMobile){
             if (type === "deeplink") {
                 activate(Injected);                
             } else {
@@ -170,8 +170,6 @@ const Wallet = () => {
                                 {!active?<span>Connect Your Wallet</span>:<span>Wallet Connected!</span>}                        
                             </h2>
                         </div>
-                        <div>{rdd.isMobile?"mobile":"desktop"}</div>
-                        <div>{rdd.isBrowser?"browser":"app"}</div>
                         <div className="col-md-12">
                             {!active?
                             <div className="sc-box-icon-inner style-2">                                
@@ -186,7 +184,7 @@ const Wallet = () => {
                                         </div>
                                     ))
                                 } */}
-                                <div className="sc-box-icon" onClick={() => { rdd.isMobile? metamaskConnect() : activate(Injected) }}>
+                                <div className="sc-box-icon" onClick={() => { isMobile? metamaskConnect() : activate(Injected) }}>
                                     <div className="img">
                                         <img src={img1} alt="Axies" />
                                     </div>

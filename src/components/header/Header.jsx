@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import menus from "../../pages/menu";
 import DarkMode from './DarkMode';
 // import logoheader from '../../assets/images/logo/logo.png'
@@ -10,10 +10,15 @@ import logo from '../../assets/images/logo/logo_new.png'
 
 import imgsun from '../../assets/images/icon/sun.png'
 import avt from '../../assets/images/avatar/avt-2.jpg'
-
+import {isMobile} from 'react-device-detect';
 
 const Header = () => {
     const { pathname } = useLocation();
+    const { type } = useParams();
+    var link = "/wallet/desktop";
+    if (isMobile&&type === "deeplink") {
+        link =  "/wallet/deeplink";               
+    } 
 
     const headerRef = useRef(null)
     useEffect(() => {
@@ -105,7 +110,7 @@ const Header = () => {
                                         </div>
                                     </div>
                                     <div className="sc-btn-top mg-r-12" id="site-header">
-                                        <Link to="/wallet/desktop" className="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Wallet connect
+                                        <Link to={link} className="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Wallet connect
                                         </span></Link>
                                     </div>
 
