@@ -3393,4 +3393,6 @@ header{
     transition: all 0.3s ease-in-out;
     cursor:pointer;
 }
-
+.logo-footer img{
+    max-width:50px;
+}

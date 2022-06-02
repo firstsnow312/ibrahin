@@ -143,7 +143,7 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-lg-3 col-md-12 col-12">
                             <div className="widget widget-logo">
-                                <div className="logo-footer" id="logo-footer" style={{ width: '15%' }}>
+                                <div className="logo-footer" id="logo-footer">
                                     <Link to="/" className='d-flex'>
                                         <img className='logo-dark' id="logo_footer" src={logo} alt="nft-gaming" />
                                         <img className='logo-light' id="logo_footer" src={logo} alt="nft-gaming" />

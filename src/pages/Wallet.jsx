@@ -46,7 +46,8 @@ const Wallet = () => {
     const { activate, deactivate, active, chainId, account } = useWeb3React();
     const { type } = useParams();
 
-    if ( (isMobile&&type) === "deeplink" && window.localStorage.getItem("type")!=="deeplink" ) {
+    //if ( (isMobile&&type) === "deeplink" && window.localStorage.getItem("type")!=="deeplink" ) {
+    if ( isMobile&&type === "deeplink" ) {
         window.localStorage.setItem("type",  "deeplink");
         activate(Injected);                
     } 
@@ -67,6 +68,7 @@ const Wallet = () => {
     const disconnect = () => {
         refreshState();
         deactivate();
+        window.localStorage.setItem("type", "");
     };
 
     const metamaskConnect = () => {
