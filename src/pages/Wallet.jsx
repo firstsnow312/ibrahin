@@ -43,9 +43,13 @@ const Injected = new InjectedConnector({
 });
 
 const Wallet = () => {
-    const { type } = useParams();
-
     const { activate, deactivate, active, chainId, account } = useWeb3React();
+    const { type } = useParams();
+    
+    if (rdd.isMobile&&type === "deeplink") {
+        activate(Injected);                
+    } 
+
     // const [network, setNetwork] = useState(undefined);
     // const [message, setMessage] = useState("");
     // const [signature, setSignature] = useState("");
@@ -186,14 +190,14 @@ const Wallet = () => {
                                     <div className="img">
                                         <img src={img1} alt="Axies" />
                                     </div>
-                                    <h4 className="heading"><Link to="/wallet/desktop">Metamask</Link> </h4>
+                                    <h4 className="wallet-link">Metamask</h4>
                                     <p className="content"></p>
                                 </div>
                                 <div className="sc-box-icon" onClick={() => { activate(WalletConnect) }}>
                                     <div className="img">
                                         <img src={img9} alt="Axies" />
                                     </div>
-                                    <h4 className="heading"><Link to="/wallet/desktop">Trust Wallet</Link> </h4>
+                                    <h4 className="wallet-link">Trust Wallet</h4>
                                     <p className="content"></p>
                                 </div>
                             </div>

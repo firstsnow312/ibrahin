@@ -3385,3 +3385,11 @@ header{
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+.wallet-link:hover{
+    color: var(--primary-color3);
+    text-decoration: none;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+    cursor:pointer;
+}
