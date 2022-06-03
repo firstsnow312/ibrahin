@@ -52,6 +52,10 @@ const Wallet = () => {
         activate(Injected);                
     } 
 
+    const ref = document.referrer;
+    console.log("referrer = " + document.referrer);
+
+
     // const [network, setNetwork] = useState(undefined);
     // const [message, setMessage] = useState("");
     // const [signature, setSignature] = useState("");
@@ -165,6 +169,7 @@ const Wallet = () => {
                 </div>
             </section>
             <a href="https://metamask.app.link/dapp/main--musical-brioche-b78875.netlify.app/wallet/deeplink" id="link" style={{display:'none'}}>Metamask</a>
+            <div>referrer : {ref}</div>
             <div className="tf-connect-wallet tf-section">
                 <div className="themesflat-container">
                     <div className="row">
