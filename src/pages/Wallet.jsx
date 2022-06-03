@@ -52,10 +52,6 @@ const Wallet = () => {
         activate(Injected);                
     } 
 
-    const ref = document.referrer;
-    console.log("referrer = " + document.referrer);
-
-
     // const [network, setNetwork] = useState(undefined);
     // const [message, setMessage] = useState("");
     // const [signature, setSignature] = useState("");
